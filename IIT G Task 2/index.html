@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="start">
+        <div class="top">
+            <h1>The <span class="News">News</span> Hive</h1>
+        </div>
+        <nav>
+            <img id="menuIcon" src="https://static.vecteezy.com/system/resources/previews/021/190/402/original/hamburger-menu-filled-icon-in-transparent-background-basic-app-and-web-ui-bold-line-icon-eps10-free-vector.jpg" alt="Menu Icon">
+            <div class="nav-links">
+                <h1>Home</h1>
+                <h1>News</h1>
+                <h1>World</h1>
+                <h1>Business</h1>
+                <h1>Politics</h1>
+                <h1>Entertainment</h1>
+            </div>
+            <select id="search1">
+                <option value="Sports">Sports</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Politics">Politics</option>
+            </select>
+            <img class="searchIcon" src="https://th.bing.com/th/id/OIP.mlktbOtBU_semyebVtQWqgHaHz?rs=1&pid=ImgDetMain" alt="Search Icon">
+        </nav>
+    </header>
+    <main class="content-wrapper">
+        <div class="main-content">
+            <!-- Blog Section 1 -->
+            <section class="blog-section-1">
+                <h2>Featured Blogs</h2>
+                <div class="blog-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/03/27/12/45/woman-2178480_1280.jpg" alt="Blog Image">
+                    <div class="details">
+                        <h3>India won the international award for the best cultural country</h3>
+                        <p>India has been awarded the best cultural country award by the International Cultural Organization for its rich and diverse cultural heritage.</p>
+                        <span>Author: John Doe</span>
+                        <span>Date: 2021-06-01</span>
+                        <span>Type: Cultural</span>
+                    </div>
+                </div>
+                <div class="blog-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/07/24/08/19/national-gallery-2533907_1280.jpg" alt="Blog Image">
+                    <div class="details">
+                        <h3>The London National Gallery celebrates 200 years</h3>
+                        <p>The London National Gallery is celebrating its bicentennial with special exhibitions and events, reflecting on its history and looking towards future innovations in public outreach.</p>
+                        <span>Author: Emily Clark</span>
+                        <span>Date: 2024-05-08</span>
+                        <span>Type: lifestyle</span>
+                    </div>
+                </div>
+                <div class="blog-item">
+                    <img src="https://cdn.pixabay.com/photo/2019/01/24/21/27/pyramids-3953368_1280.jpg" alt="Blog Image">
+                    <div class="details">
+                        <h3>Mysterious L-shaped structure discovered near Giza Pyramids</h3>
+                        <p>Archaeologists have uncovered a 4,500-year-old L-shaped structure near the Great Pyramid of Giza, shedding new light on ancient Egyptian architecture.</p>
+                        <span>Author: Laura Thompson</span>
+                        <span>Date: 2024-05-10</span>
+                        <span>Type: science</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Blog Section 2 -->
+            <section class="blog-section-2">
+                <h2>Recent Blogs</h2>
+                <div class="blog-item">
+                    <img src="https://cdn.pixabay.com/photo/2014/01/18/10/14/vaulted-cellar-247391_1280.jpg" alt="Blog Image">
+                    <h3>Lost texts from Mount Vesuvius eruption deciphered with new AI</h3>
+                    <span>Date: 2024-05-10</span>
+                </div>
+                <div class="blog-item">
+                    <img src="https://cdn.pixabay.com/photo/2023/03/28/18/28/hieroglyph-7883891_1280.jpg" alt="Blog Image">
+                    <h3>Gobekli Tepe reveals new 11,000-year-old finds</h3>
+                    <span>Date: 2024-05-10</span>
+                </div>
+                <div class="blog-item">
+                    <img src="https://cdn.pixabay.com/photo/2020/05/18/22/18/university-5188610_1280.jpg" alt="Blog Image">
+                    <h3>University students use technology to restore historic buildings in Hawaii</h3>
+                    <span>Date: 2024-05-06</span>
+                </div>
+            </section>
+        </div>
+        <aside class="side-container">
+            <div class="side-item">
+                <img src="https://cdn.pixabay.com/photo/2017/07/24/08/19/national-gallery-2533907_1280.jpg" alt="Blog Image">
+            </div>
+            <div class="side-item">
+                <img src="https://cdn.pixabay.com/photo/2020/05/18/22/18/university-5188610_1280.jpg" alt="Blog Image">
+            </div>
+            <div class="side-item">
+                <img src="https://cdn.pixabay.com/photo/2018/10/02/12/12/armenia-3718710_1280.jpg" alt="Blog Image">
+            </div>
+            <div class="side-item">
+                <img src="https://cdn.pixabay.com/photo/2020/05/31/19/53/light-bulb-5244001_1280.jpg" alt="Blog Image">
+            </div>
+            <div class="side-item">
+                <img src="https://cdn.pixabay.com/photo/2019/01/24/21/27/pyramids-3953368_1280.jpg" alt="Blog Image">
+            </div>
+            <div class="side-item">
+                <img src="https://cdn.pixabay.com/photo/2017/04/19/14/14/homo-erectus-2242425_1280.jpg" alt="Blog Image">
+            </div>
+        </aside>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const apiEndpoint = 'https://coding-week-2024-api.onrender.com/api/data';
+            async function fetchData(url) {
+                try {
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    return data;
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
+            }
+            function createBlogItem(blog) {
+                const blogItem = document.createElement('div');
+                blogItem.classList.add('blog-item');
+
+                const image = document.createElement('img');
+                image.src = blog.image;
+                image.alt = 'Blog Image';
+                image.addEventListener('click', function() {
+                    window.open(blog.image, '_blank');
+                });
+                blogItem.appendChild(image);
+
+                const details = document.createElement('div');
+                details.classList.add('details');
+
+                const headline = document.createElement('h3');
+                headline.textContent = blog.headline;
+                details.appendChild(headline);
+
+                const content = document.createElement('p');
+                content.textContent = blog.content;
+                details.appendChild(content);
+
+                const author = document.createElement('span');
+                author.textContent = 'Author: ' + blog.author;
+                details.appendChild(author);
+
+                const date = document.createElement('span');
+                date.textContent = 'Date: ' + blog.date;
+                details.appendChild(date);
+
+                const type = document.createElement('span');
+                type.textContent = 'Type: ' + blog.type;
+                details.appendChild(type);
+
+                blogItem.appendChild(details);
+
+                return blogItem;
+            }
+            function populateBlogSections(data) {
+                const featuredBlogSection = document.getElementById('featured-blog');
+                const recentBlogSection = document.getElementById('recent-blog');
+
+                data.forEach(blog => {
+                    const blogItem = createBlogItem(blog);
+                    if (blog.type === 'historic') {
+                        recentBlogSection.appendChild(blogItem);
+                    } else {
+                        featuredBlogSection.appendChild(blogItem);
+                    }
+                });
+            }
+            fetchData(apiEndpoint)
+                .then(data => populateBlogSections(data))
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
